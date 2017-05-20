@@ -28760,9 +28760,18 @@
 
 	var Examples = function Examples(props) {
 	  return _react2.default.createElement(
-	    'h3',
+	    'div',
 	    null,
-	    'Examples component'
+	    _react2.default.createElement(
+	      'h3',
+	      null,
+	      'Examples component'
+	    ),
+	    _react2.default.createElement(
+	      'p',
+	      null,
+	      'Welcome to examples page'
+	    )
 	  );
 	};
 
