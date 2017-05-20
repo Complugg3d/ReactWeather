@@ -28726,17 +28726,20 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	// class About extends Component {
-	//   render() {
-	//     return (<h3>About component</h3>);
-	//   }
-	// }
-
 	var About = function About(props) {
 	  return _react2.default.createElement(
-	    'h3',
+	    'div',
 	    null,
-	    'About component'
+	    _react2.default.createElement(
+	      'h3',
+	      null,
+	      'About'
+	    ),
+	    _react2.default.createElement(
+	      'p',
+	      null,
+	      'Welcome to the about page'
+	    )
 	  );
 	};
 
