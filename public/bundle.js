@@ -28765,7 +28765,7 @@
 	    _react2.default.createElement(
 	      'h3',
 	      null,
-	      'Examples component'
+	      'Examples'
 	    ),
 	    _react2.default.createElement(
 	      'p',
