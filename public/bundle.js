@@ -24979,14 +24979,24 @@
 	  function Nav(props) {
 	    _classCallCheck(this, Nav);
 
-	    return _possibleConstructorReturn(this, (Nav.__proto__ || Object.getPrototypeOf(Nav)).call(this, props));
+	    var _this = _possibleConstructorReturn(this, (Nav.__proto__ || Object.getPrototypeOf(Nav)).call(this, props));
+
+	    location.value;
+	    return _this;
 	  }
 
 	  _createClass(Nav, [{
 	    key: 'onSearch',
 	    value: function onSearch(e) {
 	      e.preventDefault();
-	      alert('Not yet wired up');
+	      var location = this.refs.location;
+
+
+	      if (location.value && location.value.length > 0) {
+	        var encodedLocation = encodeURIComponent(location.value);
+	        this.refs.location.value = '';
+	        window.location.hash = '#/?location=' + encodedLocation;
+	      }
 	    }
 	  }, {
 	    key: 'render',
@@ -25046,7 +25056,7 @@
 	              _react2.default.createElement(
 	                'li',
 	                null,
-	                _react2.default.createElement('input', { type: 'search', placeholder: 'Search weather by city' })
+	                _react2.default.createElement('input', { type: 'search', ref: 'location', placeholder: 'Search weather by city' })
 	              ),
 	              _react2.default.createElement(
 	                'li',
@@ -25125,13 +25135,33 @@
 
 	      this.setState({
 	        isLoading: true,
-	        errorMessage: undefined
+	        errorMessage: undefined,
+	        location: undefined,
+	        temp: undefined
 	      });
 	      (0, _openWeatherMap.getTemp)(location).then(function (temp) {
 	        that.setState({ location: location, temp: temp, isLoading: false });
 	      }, function (err) {
 	        that.setState({ isLoading: false, errorMessage: err });
 	      });
+	    }
+	  }, {
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      var location = this.props.location.query.location;
+	      if (location && location.length > 0) {
+	        this.handleSearch(location);
+	        window.location.hash = '#/';
+	      }
+	    }
+	  }, {
+	    key: 'componentWillReceiveProps',
+	    value: function componentWillReceiveProps(nextProps) {
+	      var location = nextProps.location.query.location;
+	      if (location && location.length > 0) {
+	        this.handleSearch(location);
+	        window.location.hash = '#/';
+	      }
 	    }
 	  }, {
 	    key: 'render',

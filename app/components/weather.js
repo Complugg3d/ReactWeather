@@ -17,7 +17,9 @@ class Weather extends Component {
 
     this.setState({
       isLoading: true,
-      errorMessage: undefined
+      errorMessage: undefined,
+      location: undefined,
+      temp: undefined
     });
     getTemp(location).then((temp) => {
       that.setState({ location, temp, isLoading: false });
@@ -25,6 +27,20 @@ class Weather extends Component {
     }, (err) => {
       that.setState({ isLoading: false, errorMessage: err });
     });
+  }
+  componentDidMount(){
+    var location = this.props.location.query.location;
+    if(location && location.length > 0) {
+      this.handleSearch(location);
+      window.location.hash = '#/';
+    }
+  }
+  componentWillReceiveProps(nextProps) {
+    var location = nextProps.location.query.location;
+    if(location && location.length > 0) {
+      this.handleSearch(location);
+      window.location.hash = '#/';
+    }
   }
   render() {
     let { isLoading, location, temp, errorMessage } = this.state;
