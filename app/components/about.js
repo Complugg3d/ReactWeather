@@ -3,7 +3,7 @@ import { Link } from 'react-router'
 
 var About = (props) => {
   return (<div>
-    <h1 className="text-center">Examples</h1>
+    <h1 className="text-center">About</h1>
     <p className="text-center">This was a page created in the course The complete React Web Developer course</p>
     <p className="text-center">
       And you will find it in here<br/>

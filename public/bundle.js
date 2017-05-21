@@ -28868,7 +28868,7 @@
 	    _react2.default.createElement(
 	      'h1',
 	      { className: 'text-center' },
-	      'Examples'
+	      'About'
 	    ),
 	    _react2.default.createElement(
 	      'p',
