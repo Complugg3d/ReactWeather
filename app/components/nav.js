@@ -23,7 +23,7 @@ class Nav extends Component {
         <form onSubmit={this.onSearch.bind(this)}>
           <ul className="menu">
             <li>
-              <input type="search" placeholder="search weather" />
+              <input type="search" placeholder="Search weather by city" />
             </li>
             <li><input type="submit" className="button" value="Get Weather"/></li>
           </ul>
