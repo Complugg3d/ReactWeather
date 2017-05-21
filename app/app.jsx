@@ -9,7 +9,7 @@ import Examples from 'examples';
 //load foundation
 require('style!css!foundation-sites/dist/foundation.min.css');
 //load custom css
-require('style!css!applicationStyles')
+require('style!css!sass!applicationStyles')
 $(document).foundation();
 
 

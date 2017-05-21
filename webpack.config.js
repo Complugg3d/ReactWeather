@@ -32,7 +32,7 @@ module.exports = {
       'weather-message': 'app/components/weather-message.js',
       'open-weather-map': 'app/api/open-weather-map.js',
       'error-modal': 'app/components/error-modal.js',
-      'applicationStyles': 'app/styles/app.css'
+      'applicationStyles': 'app/styles/app.scss'
     },
     extensions: ['', '.js', '.jsx']
   },
