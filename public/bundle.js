@@ -104,24 +104,24 @@
 
 	var _weather2 = _interopRequireDefault(_weather);
 
-	var _about = __webpack_require__(258);
+	var _about = __webpack_require__(260);
 
 	var _about2 = _interopRequireDefault(_about);
 
-	var _examples = __webpack_require__(259);
+	var _examples = __webpack_require__(261);
 
 	var _examples2 = _interopRequireDefault(_examples);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var React = __webpack_require__(31);
-	var ReactDOM = __webpack_require__(260);
+	var ReactDOM = __webpack_require__(258);
 
 
 	//load foundation
-	__webpack_require__(261);
+	__webpack_require__(262);
 	//load custom css
-	__webpack_require__(265);
+	__webpack_require__(266);
 	$(document).foundation();
 
 	ReactDOM.render(React.createElement(
@@ -28900,6 +28900,14 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _reactDom = __webpack_require__(258);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
+	var _server = __webpack_require__(259);
+
+	var _server2 = _interopRequireDefault(_server);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -28920,18 +28928,12 @@
 	  _createClass(ErrorModal, [{
 	    key: 'componentDidMount',
 	    value: function componentDidMount() {
-	      var modal = new Foundation.Reveal($('#error-modal'));
-	      modal.open();
-	    }
-	  }, {
-	    key: 'render',
-	    value: function render() {
 	      var _props = this.props,
 	          title = _props.title,
 	          message = _props.message;
 
 
-	      return _react2.default.createElement(
+	      var modalMarkup = _react2.default.createElement(
 	        'div',
 	        { id: 'error-modal', className: 'reveal tiny text-center', 'data-reveal': '' },
 	        _react2.default.createElement(
@@ -28950,6 +28952,18 @@
 	          'Okay'
 	        )
 	      );
+
+	      var $modal = $(_server2.default.renderToString(modalMarkup));
+	      $(_reactDom2.default.findDOMNode(this)).html($modal);
+
+	      var modal = new Foundation.Reveal($('#error-modal'));
+	      modal.open();
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+
+	      return _react2.default.createElement('div', null);
 	    }
 	  }]);
 
@@ -28966,6 +28980,24 @@
 
 /***/ },
 /* 258 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	module.exports = __webpack_require__(33);
+
+
+/***/ },
+/* 259 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	module.exports = __webpack_require__(177);
+
+
+/***/ },
+/* 260 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29028,7 +29060,7 @@
 	exports.default = About;
 
 /***/ },
-/* 259 */
+/* 261 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29087,25 +29119,16 @@
 	exports.default = Examples;
 
 /***/ },
-/* 260 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	module.exports = __webpack_require__(33);
-
-
-/***/ },
-/* 261 */
+/* 262 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(262);
+	var content = __webpack_require__(263);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(264)(content, {});
+	var update = __webpack_require__(265)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -29122,10 +29145,10 @@
 	}
 
 /***/ },
-/* 262 */
+/* 263 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(263)();
+	exports = module.exports = __webpack_require__(264)();
 	// imports
 
 
@@ -29136,7 +29159,7 @@
 
 
 /***/ },
-/* 263 */
+/* 264 */
 /***/ function(module, exports) {
 
 	/*
@@ -29192,7 +29215,7 @@
 
 
 /***/ },
-/* 264 */
+/* 265 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -29446,16 +29469,16 @@
 
 
 /***/ },
-/* 265 */
+/* 266 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(266);
+	var content = __webpack_require__(267);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(264)(content, {});
+	var update = __webpack_require__(265)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -29472,10 +29495,10 @@
 	}
 
 /***/ },
-/* 266 */
+/* 267 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(263)();
+	exports = module.exports = __webpack_require__(264)();
 	// imports
 
 
