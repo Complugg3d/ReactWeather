@@ -28857,6 +28857,8 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _reactRouter = __webpack_require__(8);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var About = function About(props) {
@@ -28864,14 +28866,40 @@
 	    'div',
 	    null,
 	    _react2.default.createElement(
-	      'h3',
-	      null,
-	      'About'
+	      'h1',
+	      { className: 'text-center' },
+	      'Examples'
 	    ),
 	    _react2.default.createElement(
 	      'p',
-	      null,
-	      'Welcome to the about page'
+	      { className: 'text-center' },
+	      'This was a page created in the course The complete React Web Developer course'
+	    ),
+	    _react2.default.createElement(
+	      'p',
+	      { className: 'text-center' },
+	      'And you will find it in here',
+	      _react2.default.createElement('br', null),
+	      _react2.default.createElement(
+	        'a',
+	        { href: 'https://www.udemy.com/the-complete-react-web-app-developer-course/learn/v4/overview' },
+	        'Click here'
+	      )
+	    ),
+	    _react2.default.createElement(
+	      'p',
+	      { className: 'text-center' },
+	      'This is the git repo of the code',
+	      _react2.default.createElement('br', null),
+	      _react2.default.createElement(
+	        'span',
+	        { className: 'label success' },
+	        _react2.default.createElement(
+	          'a',
+	          { href: 'https://github.com/Complugg3d/ReactWeather' },
+	          'Git Repo'
+	        )
+	      )
 	    )
 	  );
 	};
