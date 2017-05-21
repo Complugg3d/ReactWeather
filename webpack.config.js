@@ -30,7 +30,8 @@ module.exports = {
       examples: 'app/components/examples.js',
       'weather-form': 'app/components/weather-form.js',
       'weather-message': 'app/components/weather-message.js',
-      'open-weather-map': 'app/api/open-weather-map.js'
+      'open-weather-map': 'app/api/open-weather-map.js',
+      'error-modal': 'app/components/error-modal.js'
     },
     extensions: ['', '.js', '.jsx']
   },
